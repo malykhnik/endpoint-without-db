@@ -6,9 +6,6 @@ import ru.s3v3nny.endpointwithoutdb.dto.Error;
 import ru.s3v3nny.endpointwithoutdb.dto.Message;
 import ru.s3v3nny.endpointwithoutdb.dto.Response;
 
-import java.util.Arrays;
-import java.util.List;
-
 @Service
 @RequiredArgsConstructor
 public class EndpointService {
