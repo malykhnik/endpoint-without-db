@@ -11,9 +11,8 @@ public class ExecuteUtil {
 
     @SneakyThrows
     public String executeIsWorkingCommand(String serviceName) {
-        String command = String.format("systemctl is-working %s", serviceName);
-        /* Runtime runtime = Runtime.getRuntime();
-        Process process = runtime.exec(command);
+        Runtime runtime = Runtime.getRuntime();
+        Process process = runtime.exec(new String[]{"systemctl", "is-working", serviceName});
         process.waitFor();
         BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
         String out = "";
@@ -22,22 +21,6 @@ public class ExecuteUtil {
             return out;
         }
         reader.close();
-        return null; */
-    ProcessBuilder builder = new ProcessBuilder();
-    builder.command(command);
-    Process process = builder.start();
-    StringBuilder output = new StringBuilder();
-    BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-    String line;
-    while ((line = reader.readLine()) != null) {
-        output.append(line);
-    }
-
-    int exitCode = process.waitFor();
-    if (exitCode != 0) {
-        throw new Exception(String.format("Command '%s' failed with exit code %d", command, exitCode));
-    }
-
-    return output.toString();
+        return null;
     }
 }
