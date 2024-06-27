@@ -10,7 +10,7 @@ import ru.s3v3nny.endpointwithoutdb.dto.Response;
 @RequiredArgsConstructor
 public class EndpointService {
 
-    public Response<Message, Error> checkServicesStatus() {
+    public Response<Message, Error> checkServiceStatus() {
         Message message = new Message("Endpoint is active");
         return new Response<>(message, null);
     }

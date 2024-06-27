@@ -15,8 +15,8 @@ public class EndpointController {
     private final EndpointService service;
 
     @GetMapping("/check-status")
-    public ResponseEntity checkServicesStatus () {
-        Response response = service.checkServicesStatus();
+    public ResponseEntity checkServiceStatus () {
+        Response response = service.checkServiceStatus();
         return response.getError() == null ? ResponseEntity.ok().body(response.getValue())
                 : ResponseEntity.badRequest().body(response.getError());
     }
