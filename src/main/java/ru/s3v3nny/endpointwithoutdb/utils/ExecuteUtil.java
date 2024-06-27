@@ -12,7 +12,7 @@ public class ExecuteUtil {
     @SneakyThrows
     public String executeIsWorkingCommand(String serviceName) {
         Runtime runtime = Runtime.getRuntime();
-        Process process = runtime.exec(new String[]{"systemctl", "is-working", serviceName});
+        Process process = runtime.exec(new String[]{"systemctl", "is-active", serviceName});
         process.waitFor();
         BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
         String out = "";
