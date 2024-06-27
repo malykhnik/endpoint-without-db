@@ -33,6 +33,11 @@ public class ExecuteUtil {
         output.append(line);
     }
 
+    int exitCode = process.waitFor();
+    if (exitCode != 0) {
+        throw new Exception(String.format("Command '%s' failed with exit code %d", command, exitCode));
+    }
+
     return output.toString();
     }
 }
