@@ -4,6 +4,7 @@ import lombok.SneakyThrows;
 import org.springframework.stereotype.Component;
 import ru.s3v3nny.endpointwithoutdb.dto.Response;
 import ru.s3v3nny.endpointwithoutdb.dto.ServiceInfo;
+import ru.s3v3nny.endpointwithoutdb.dto.ServicesDto;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -14,7 +15,7 @@ import java.util.List;
 public class ExecuteUtil {
 
     @SneakyThrows
-    public Response executeIsWorkingCommand(List<String> serviceNames) {
+    public ServicesDto executeIsActiveCommand(List<String> serviceNames) {
         List<ServiceInfo> services = new ArrayList<>();
         Runtime runtime = Runtime.getRuntime();
         Process process;
@@ -30,7 +31,10 @@ public class ExecuteUtil {
             }
             reader.close();
         }
-        Response response = new Response(services);
-        return response;
+
+        if (services.isEmpty()) {
+            return null;
+        }
+        return new ServicesDto(services);
     }
 }

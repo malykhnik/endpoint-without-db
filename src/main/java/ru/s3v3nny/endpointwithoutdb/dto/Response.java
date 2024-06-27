@@ -1,5 +1,11 @@
 package ru.s3v3nny.endpointwithoutdb.dto;
 
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
-public record Response (List<ServiceInfo> services) {}
+@Data
+@AllArgsConstructor
+public class Response<Value, Error> {
+    Value value;
+    Error error;
+}
