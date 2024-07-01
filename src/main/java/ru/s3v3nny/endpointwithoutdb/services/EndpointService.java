@@ -21,12 +21,12 @@ public class EndpointService {
     @Value("${auth.password_hash}")
     String passwordHash;
 
-    public Response<Message, Error> checkServiceStatus(TokenData tokenData) {
+    public Response<Message, Error> checkServiceStatus(String token) {
         ArrayList<ServiceDto> services = new ArrayList<>();
         ServiceDto serviceDto = new ServiceDto("endpoint", "active");
         services.add(serviceDto);
 
-        if(!tokenData.token().equals(cachedToken)) {
+        if(!validateToken(token)) {
             var err = new Error("Wrong token");
             return new Response<>(null, err);
         }
