@@ -1,11 +1,11 @@
-package ru.s3v3nny.endpointwithoutdb.services;
+package ru.malykhnik.endpointwithoutdb.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import ru.s3v3nny.endpointwithoutdb.dto.*;
-import ru.s3v3nny.endpointwithoutdb.dto.Error;
-import ru.s3v3nny.endpointwithoutdb.util.TokenUtil;
+import ru.malykhnik.endpointwithoutdb.dto.*;
+import ru.malykhnik.endpointwithoutdb.dto.Error;
+import ru.malykhnik.endpointwithoutdb.util.TokenUtil;
 
 import java.util.ArrayList;
 

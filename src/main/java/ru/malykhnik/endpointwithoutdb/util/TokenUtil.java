@@ -1,4 +1,4 @@
-package ru.s3v3nny.endpointwithoutdb.util;
+package ru.malykhnik.endpointwithoutdb.util;
 
 import org.springframework.stereotype.Component;
 

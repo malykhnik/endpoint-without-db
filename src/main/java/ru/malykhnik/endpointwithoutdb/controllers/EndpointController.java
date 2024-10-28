@@ -1,12 +1,11 @@
-package ru.s3v3nny.endpointwithoutdb.controllers;
+package ru.malykhnik.endpointwithoutdb.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.s3v3nny.endpointwithoutdb.dto.AuthData;
-import ru.s3v3nny.endpointwithoutdb.dto.Response;
-import ru.s3v3nny.endpointwithoutdb.dto.TokenData;
-import ru.s3v3nny.endpointwithoutdb.services.EndpointService;
+import ru.malykhnik.endpointwithoutdb.dto.AuthData;
+import ru.malykhnik.endpointwithoutdb.dto.Response;
+import ru.malykhnik.endpointwithoutdb.services.EndpointService;
 
 @RestController
 @RequestMapping("/api/v1")

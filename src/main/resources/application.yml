@@ -1,0 +1,21 @@
+server:
+  port: 3050
+
+spring:
+  application:
+    name: endpoint-without-db
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, prometheus
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+
+auth:
+  login: endpoint1
+  password_hash: $2a$12$cgyAVISqKmCZp.CxB5mSVOdGIHYEPlMChL3OVclSpntS5.9fJeR4C

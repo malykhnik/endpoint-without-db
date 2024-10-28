@@ -1,4 +1,4 @@
-package ru.s3v3nny.endpointwithoutdb;
+package ru.malykhnik.endpointwithoutdb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
